@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputery</title>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" type="x-icon" href="favicon.png">
+</head>
+
+<body>
+
+
+    <header>
+        <img src="./animajca.gif" alt="Pogotowie komputerowe">
+    </header>
+    <div class="menu">
+        <div class="linki">
+            <h2><a href="./index.html" id="link">Strona Główna</a></h2>
+            <h2><a href="./kontakt.html" id="link">Kontakt</a></h2>
+        </div>
+    </div>
+    <main>
+        <div class="contet"></div>
+        <div class="contet">
+            <table>
+                <tr>
+                    <td>Imię:</td>
+                    <td><input type="text" id="imie"></td>
+                </tr>
+                <tr>
+                    <td>Nazwisko:</td>
+                    <td><input type="text" id="nazwisko"></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Zgłoszenie:</td>
+                    <td><select name="uslugi" id="uslugi">
+                            <option value="naprawa komputerów">naprawa komputerów</option>
+                            <option value="odzyskiwanie danych">odzyskiwanie danych</option>
+                            <option value="wirusy">wirusy</option>
+                            <option value="konfiguracja LAN">konfiguracja LAN</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" checked id="kopia">Wyślij kopię wiadomości</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="btn" value="Czyść" onclick="Clean()">
+                        <input type="submit" class="btn" value="Wyślij" onclick="Send()">
+                    </td>
+                </tr>
+            </table>
+            <div class="result" id="result"></div>
+        </div>
+        <script>
+            function Send() {
+                let imie = document.getElementById('imie').value;
+                let nazwisko = document.getElementById('nazwisko').value;
+                let email = document.getElementById('email').value;
+                let uslugi = document.getElementById('uslugi').value;
+                result.innerHTML = `${imie} ${nazwisko} <br> ${email.toLowerCase()} <br>Usługa: ${uslugi}`;
+            }
+            function Clean() {
+                document.getElementById('imie').value = '';
+                document.getElementById('nazwisko').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('uslugi').value = 'naprawa komputerów';
+            }
+        </script>
+        <div class="contet"></div>
+    </main>
+
+    <footer>
+        Autor: Numer_zdającego
+    </footer>
+
+</body>
+
+</html>
